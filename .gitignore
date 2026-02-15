@@ -34,3 +34,4 @@ composer.lock
 
 deploy.php
 deploy.sh
+wp-content/smush-webp/
