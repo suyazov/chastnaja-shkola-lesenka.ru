@@ -1,0 +1,24 @@
+# Security hardening: block direct web access to secrets and VCS internals.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block VCS directories regardless of file name.
+    RewriteRule (^|/)\.(git|svn|hg)(/|$) - [F,L,NC]
+
+    # Block raw database dumps under the local database folder.
+    RewriteRule ^database/.*\.(sql|bak|zip|tar|gz)$ - [F,L,NC]
+</IfModule>
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "(^\.|wp-config\.php|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|.*\.(env|ini|log|sql|bak|sh|pem|key|p12|pfx|tar|gz|zip)$)">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+<IfModule !mod_authz_core.c>
+    <FilesMatch "(^\.|wp-config\.php|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|.*\.(env|ini|log|sql|bak|sh|pem|key|p12|pfx|tar|gz|zip)$)">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+</IfModule>
