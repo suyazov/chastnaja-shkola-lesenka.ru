@@ -94,7 +94,7 @@
             <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
             
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/images/logo.png" alt="" title=""></a></div>
+				<div class="nav-logo"><a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/images2/logo.png" alt="Логотип школы Лесенка" title="Лесенка"></a></div>
                 <div class="menu-outer">
 					<!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 				</div>

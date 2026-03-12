@@ -1731,6 +1731,15 @@
 		background:#ffffff;
 	}
 
+	/* Prevent overlap with content on mobile when JS toggles .fixed-header */
+	.main-header.header-style-four.fixed-header {
+		position: relative !important;
+		top: auto;
+		left: auto;
+		right: auto;
+		box-shadow: none;
+	}
+
 	.main-header.header-style-four .nav-outer{
 		float:right;
 	}
