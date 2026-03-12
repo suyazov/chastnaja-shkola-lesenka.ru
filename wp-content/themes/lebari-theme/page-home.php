@@ -311,6 +311,57 @@ get_header();
 </section>
 <!-- End Program Slider -->
 
+<?php
+$aftercare_notice = get_field('aftercare_notice');
+$aftercare_title = get_field('aftercare_title');
+$aftercare_subtitle = get_field('aftercare_subtitle');
+$aftercare_points_raw = get_field('aftercare_points');
+$aftercare_food = get_field('aftercare_food');
+$aftercare_price = get_field('aftercare_price');
+$aftercare_points_normalized = preg_replace('/<br\s*\/?>/i', "\n", (string) $aftercare_points_raw);
+$aftercare_points = array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', wp_strip_all_tags($aftercare_points_normalized))));
+?>
+
+<?php if ($aftercare_title || !empty($aftercare_points)): ?>
+<section class="courses-section" id="aftercare" style="padding-top: 40px; padding-bottom: 40px;">
+    <div class="auto-container">
+        <div class="sec-title-three centered" style="margin-bottom: 30px;">
+            <?php if ($aftercare_notice): ?>
+                <div class="title"><?php echo esc_html($aftercare_notice); ?></div>
+            <?php endif; ?>
+            <?php if ($aftercare_title): ?>
+                <h2><?php echo esc_html($aftercare_title); ?></h2>
+            <?php endif; ?>
+            <?php if ($aftercare_subtitle): ?>
+                <div class="text" style="max-width: 900px; margin: 12px auto 0;"><?php echo esc_html($aftercare_subtitle); ?></div>
+            <?php endif; ?>
+        </div>
+
+        <div class="row clearfix">
+            <div class="course-block-five col-lg-12 col-md-12 col-sm-12">
+                <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1200ms" style="padding: 32px;">
+                    <?php if (!empty($aftercare_points)): ?>
+                        <ul style="margin: 0 0 22px; padding-left: 18px;">
+                            <?php foreach ($aftercare_points as $point): ?>
+                                <li style="margin-bottom: 8px;"><?php echo esc_html($point); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+
+                    <?php if ($aftercare_food): ?>
+                        <div class="text" style="margin-bottom: 12px;"><?php echo nl2br(esc_html($aftercare_food)); ?></div>
+                    <?php endif; ?>
+
+                    <?php if ($aftercare_price): ?>
+                        <h3 style="margin-bottom: 0;"><?php echo esc_html($aftercare_price); ?></h3>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 <!-- Mission Section -->
 <section class="mission-section">
     <div class="pattern-layer-one"

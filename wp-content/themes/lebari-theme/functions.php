@@ -33,3 +33,69 @@ function lebari_theme_assets() {
     wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'lebari_theme_assets');
+
+function lebari_register_aftercare_acf_group() {
+    if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+        return;
+    }
+
+    acf_add_local_field_group(array(
+        'key' => 'group_les_aftercare_home',
+        'title' => 'Главная: Продленка',
+        'fields' => array(
+            array(
+                'key' => 'field_les_aftercare_notice',
+                'label' => 'Анонс',
+                'name' => 'aftercare_notice',
+                'type' => 'text',
+            ),
+            array(
+                'key' => 'field_les_aftercare_title',
+                'label' => 'Заголовок блока',
+                'name' => 'aftercare_title',
+                'type' => 'text',
+            ),
+            array(
+                'key' => 'field_les_aftercare_subtitle',
+                'label' => 'Подзаголовок',
+                'name' => 'aftercare_subtitle',
+                'type' => 'text',
+            ),
+            array(
+                'key' => 'field_les_aftercare_points',
+                'label' => 'Пункты списка (каждый с новой строки)',
+                'name' => 'aftercare_points',
+                'type' => 'textarea',
+                'rows' => 10,
+                'new_lines' => '',
+            ),
+            array(
+                'key' => 'field_les_aftercare_food',
+                'label' => 'Питание',
+                'name' => 'aftercare_food',
+                'type' => 'textarea',
+                'rows' => 4,
+                'new_lines' => 'br',
+            ),
+            array(
+                'key' => 'field_les_aftercare_price',
+                'label' => 'Стоимость',
+                'name' => 'aftercare_price',
+                'type' => 'text',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-home.php',
+                ),
+            ),
+        ),
+        'position' => 'normal',
+        'style' => 'default',
+        'active' => true,
+    ));
+}
+add_action( 'acf/init', 'lebari_register_aftercare_acf_group' );

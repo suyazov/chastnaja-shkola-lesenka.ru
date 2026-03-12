@@ -3,6 +3,7 @@ wp-config.php
 wp-content/uploads/
 wp-content/cache/
 wp-content/upgrade/
+wp-content/upgrade-temp-backup/
 
 # Sensitive files
 *.log
@@ -11,6 +12,7 @@ wp-content/upgrade/
 *.zip
 *.bak
 *.tmp
+!database/migrations/*.sql
 
 # System files
 .DS_Store
@@ -30,8 +32,10 @@ composer.lock
 # Env files
 .env
 .env.*
+!.env.example
 
 
 deploy.php
 deploy.sh
 wp-content/smush-webp/
+docker-compose.override.yml
