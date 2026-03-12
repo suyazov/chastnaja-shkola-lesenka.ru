@@ -15582,6 +15582,11 @@ img {
 }
 
 @media only screen and (max-width: 767px) {
+	.course-block-five .inner-box .image {
+		height: auto;
+		aspect-ratio: 319 / 293;
+	}
+
 	.footer-style-three .contact-widget {
 		padding: 22px 18px;
 		border-radius: 18px;
@@ -16965,7 +16970,7 @@ img {
 	position: relative;
 	overflow: hidden;
 	border-radius: 10px;
-	aspect-ratio: 319 / 293;
+	height: 293px;
 	background-color: #e9edf4;
 }
 
