@@ -132,6 +132,26 @@ chmod +x scripts/apply-migrations.sh scripts/apply-migrations-remote.sh scripts/
 
 Скрипты ведут журнал в таблице `wp_schema_migrations`, поэтому повторно одну и ту же миграцию не применяют.
 
+## Важные технические нюансы production
+
+### 1. PHP в CLI и PHP в вебе
+
+На сервере веб работает на PHP 8.4, но команда `php` в SSH по умолчанию может указывать на старую версию.
+
+Это критично для ACF и современных плагинов: через старый CLI возможны `Parse error`, хотя сайт в браузере работает.
+
+Что сделано в проекте:
+
+- `scripts/apply-migrations-remote.sh` выбирает `/opt/php84/bin/php` приоритетно
+- `scripts/remote-apply-migration.php` применяется этим же бинарником
+
+### 2. Кодировка при SQL-миграциях
+
+Чтобы не получать "кракозябры" (`Ð...`) в кириллице:
+
+- в `scripts/remote-apply-migration.php` принудительно выставлен `utf8mb4` через `mysqli->set_charset('utf8mb4')`
+- после текстовых миграций при включенном object cache очищайте Redis (`redis-cli FLUSHALL`)
+
 ## Деплой на сервер
 
 Если на сервере раньше был старый GitHub-аккаунт, перенастройте remote:
@@ -150,6 +170,23 @@ ssh -T git@github.com
 После этого `deploy.sh` с `git pull origin main` продолжит работать, но уже с новым GitHub-аккаунтом.
 
 Важно: деплой обновляет файлы. Изменения в базе выкатывайте миграциями.
+
+## README и production
+
+README нужен в репозитории для команды, но его можно убрать именно с production-рабочей копии:
+
+```bash
+ssh myserver
+cd /var/www/fastuser/data/www/chastnaja-shkola-lesenka.ru
+git update-index --skip-worktree README.md
+rm -f README.md
+```
+
+Проверка:
+
+```bash
+test ! -f README.md && echo "README отсутствует на production"
+```
 
 ## Что не коммитить
 
@@ -185,6 +222,7 @@ git push origin --force --tags
 В проект уже добавлена миграция:
 
 - `database/migrations/20260312_001_home_aftercare_and_seo.sql`
+- `database/migrations/20260312_002_fix_aftercare_utf8.sql`
 
 Она делает две вещи:
 

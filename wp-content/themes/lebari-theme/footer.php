@@ -43,10 +43,10 @@
 
 				<!-- Column -->
 				<div class="big-column col-12">
-					<div class="row clearfix justify-content-between">
+					<div class="row clearfix justify-content-center align-items-start">
 
 						<!-- Footer Column -->
-						<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+						<div class="footer-column col-lg-5 col-md-6 col-sm-12">
 							<div class="footer-widget logo-widget">
 								<div class="logo">
 									<a href="/"><img
@@ -58,7 +58,7 @@
 						</div>
 
 						<!-- Footer Column -->
-						<div class="footer-column col-lg-6 col-md-6 col-sm-12">
+						<div class="footer-column col-lg-5 col-md-6 col-sm-12">
 							<div class="footer-widget contact-widget">
 								<h4>Контакты</h4>
 								<ul class="contact-list">

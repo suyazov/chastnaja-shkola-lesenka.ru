@@ -15488,6 +15488,134 @@ img {
 	color: #102659;
 }
 
+/* Aftercare block aligned with Feature Section Three visual style */
+.aftercare-advantages {
+	padding: 40px 0 95px;
+	background-color: #f6f8fc;
+}
+
+.aftercare-advantages .title-column .inner-column {
+	padding-top: 30px;
+	padding-right: 20px;
+}
+
+.aftercare-advantages .title-column .title {
+	position: relative;
+	color: #43b97d;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.4em;
+	margin-bottom: 16px;
+	font-family: 'Lato', sans-serif;
+}
+
+.aftercare-advantages .title-column h2 {
+	max-width: 520px;
+}
+
+.aftercare-advantages .title-column .text {
+	font-size: 19px;
+	margin-bottom: 26px;
+}
+
+.aftercare-advantages .aftercare-meta-box {
+	position: relative;
+	margin-bottom: 26px;
+	padding: 24px 24px 20px;
+	border-radius: 15px;
+	background: #ffffff;
+	box-shadow: 0 10px 30px rgba(12, 13, 36, 0.08);
+}
+
+.aftercare-advantages .aftercare-meta-box .aftercare-food {
+	margin-bottom: 14px;
+	font-size: 17px;
+	line-height: 1.7em;
+	color: #424256;
+}
+
+.aftercare-advantages .aftercare-meta-box h3 {
+	color: #0c0d24;
+	font-size: 32px;
+	line-height: 1.2em;
+	margin: 0;
+	font-family: 'Glory', sans-serif;
+}
+
+.aftercare-advantages .blocks-column .inner-column {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.aftercare-advantages .feature-block-five .inner-box {
+	min-height: 215px;
+	text-align: left;
+	padding: 24px 20px 22px;
+	border: 1px solid #ebedf2;
+	box-shadow: 0 8px 24px rgba(12, 13, 36, 0.08);
+}
+
+.aftercare-advantages .feature-block-five .inner-box .icon {
+	margin: 0 0 14px;
+	width: 78px;
+	height: 78px;
+	line-height: 80px;
+	font-size: 38px;
+}
+
+.aftercare-advantages .feature-block-five .inner-box h4 {
+	font-size: 24px;
+	line-height: 1.35em;
+	font-weight: 600;
+	margin: 0;
+	text-transform: none;
+	letter-spacing: 0;
+	font-family: 'Glory', sans-serif;
+}
+
+/* Footer spacing and alignment refinements */
+.footer-style-three .widgets-section {
+	padding-top: 10px;
+	padding-bottom: 18px;
+}
+
+.footer-style-three .footer-column {
+	margin-bottom: 16px;
+}
+
+.footer-style-three .logo-widget .logo {
+	margin-bottom: 12px;
+}
+
+.footer-style-three .contact-widget {
+	max-width: 440px;
+	margin-top: 4px;
+}
+
+.footer-style-three .contact-list li {
+	margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 991px) {
+	.aftercare-advantages {
+		padding: 35px 0 70px;
+	}
+
+	.aftercare-advantages .title-column .inner-column {
+		padding-top: 0;
+		padding-right: 0;
+	}
+
+	.aftercare-advantages .blocks-column .inner-column {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.aftercare-advantages .feature-block-five .inner-box {
+		min-height: 0;
+	}
+}
+
 /*** 
 
 ====================================================================
