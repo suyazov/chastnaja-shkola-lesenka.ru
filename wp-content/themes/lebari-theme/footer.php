@@ -1,4 +1,12 @@
 <!-- Footer Style Three -->
+<?php
+$footer_contact1 = (string) get_field('footer_contact1');
+$footer_contact2 = (string) get_field('footer_contact2');
+$footer_email_raw = (string) get_field('footer_email');
+$footer_email = sanitize_email($footer_email_raw);
+$footer_tel_raw = (string) get_field('footer_tel');
+$footer_tel_href = preg_replace('/[^0-9+]/', '', $footer_tel_raw);
+?>
 <footer class="footer-style-three" id="footer">
 	<div class="icon-layer-one"
 		style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/img/images2/icons/icon-20.png)">
@@ -43,7 +51,7 @@
 
 				<!-- Column -->
 				<div class="big-column col-12">
-					<div class="row clearfix justify-content-center align-items-start">
+					<div class="row clearfix justify-content-center align-items-center footer-contacts-row">
 
 						<!-- Footer Column -->
 						<div class="footer-column col-lg-5 col-md-6 col-sm-12">
@@ -61,11 +69,19 @@
 						<div class="footer-column col-lg-5 col-md-6 col-sm-12">
 							<div class="footer-widget contact-widget">
 								<h4>Контакты</h4>
-								<ul class="contact-list">
-									<li><?php echo get_field('footer_contact1') ?> <br>
-										<?php echo get_field('footer_contact2') ?>​</li>
-									<li>Email<a href="#"><?php echo get_field('footer_email') ?></a></li>
-									<li>Телефон<a href="#"><?php echo get_field('footer_tel') ?></a></li>
+								<ul class="contact-list contact-list--cards">
+									<li class="contact-item contact-item-address">
+										<span class="contact-label">Адрес</span>
+										<span class="contact-value"><?php echo esc_html($footer_contact1); ?><br><?php echo esc_html($footer_contact2); ?></span>
+									</li>
+									<li class="contact-item contact-item-email">
+										<span class="contact-label">Email</span>
+										<a class="contact-value" href="mailto:<?php echo esc_attr($footer_email); ?>"><?php echo esc_html($footer_email_raw); ?></a>
+									</li>
+									<li class="contact-item contact-item-phone">
+										<span class="contact-label">Телефон</span>
+										<a class="contact-value" href="tel:<?php echo esc_attr($footer_tel_href); ?>"><?php echo esc_html($footer_tel_raw); ?></a>
+									</li>
 								</ul>
 							</div>
 						</div>

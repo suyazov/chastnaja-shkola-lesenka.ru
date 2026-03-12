@@ -15412,6 +15412,89 @@ img {
 	position: relative;
 }
 
+.footer-style-three .contact-widget {
+	max-width: 625px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	margin-left: 0;
+}
+
+.footer-style-three .footer-contacts-row {
+	column-gap: 20px;
+	row-gap: 24px;
+}
+
+.footer-style-three .footer-contacts-row .logo-widget {
+	max-width: 360px;
+	margin: 0 auto;
+}
+
+.footer-style-three .footer-contacts-row .logo-widget .logo {
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.footer-style-three .contact-list--cards {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+	gap: 12px;
+}
+
+.footer-style-three .contact-list--cards .contact-item {
+	margin-bottom: 0;
+	padding: 10px 0;
+	border-radius: 0;
+	border: 0;
+	background-color: transparent;
+	font-size: 16px;
+	opacity: 1;
+}
+
+.footer-style-three .contact-list--cards .contact-item-address {
+	grid-column: 1 / -1;
+	background-color: transparent;
+}
+
+.footer-style-three .contact-list--cards .contact-label {
+	display: block;
+	margin-bottom: 4px;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #5f6b7c;
+}
+
+.footer-style-three .contact-list--cards .contact-value {
+	display: block;
+	font-size: 18px;
+	line-height: 1.45em;
+	color: #0c0d24;
+	font-family: 'Lato', sans-serif;
+	overflow-wrap: break-word;
+	word-break: normal;
+}
+
+.footer-style-three .contact-list--cards a.contact-value {
+	color: #2f8760;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.footer-style-three .contact-list--cards .contact-item-email .contact-value {
+	font-size: 17px;
+}
+
+.footer-style-three .contact-list--cards .contact-item-phone .contact-value {
+	white-space: nowrap;
+}
+
+.footer-style-three .contact-list--cards a.contact-value:hover {
+	color: #0c0d24;
+}
+
 .footer-style-three .contact-list li {
 	position: relative;
 	font-size: 16px;
@@ -15486,6 +15569,35 @@ img {
 .footer-style-three .footer-bottom .copyright a {
 	position: relative;
 	color: #102659;
+}
+
+@media only screen and (max-width: 1023px) {
+	.footer-style-three .contact-widget {
+		max-width: 100%;
+	}
+
+	.footer-style-three .footer-contacts-row {
+		column-gap: 0;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.footer-style-three .contact-widget {
+		padding: 22px 18px;
+		border-radius: 18px;
+	}
+
+	.footer-style-three .contact-list--cards {
+		grid-template-columns: 1fr;
+	}
+
+	.footer-style-three .contact-list--cards .contact-value {
+		font-size: 16px;
+	}
+
+	.footer-style-three .contact-list--cards .contact-item-phone .contact-value {
+		white-space: normal;
+	}
 }
 
 /* Aftercare block in mission-section style */
@@ -16853,12 +16965,22 @@ img {
 	position: relative;
 	overflow: hidden;
 	border-radius: 10px;
+	aspect-ratio: 319 / 293;
+	background-color: #e9edf4;
+}
+
+.course-block-five .inner-box .image a {
+	display: block;
+	height: 100%;
 }
 
 .course-block-five .inner-box .image img {
 	position: relative;
 	width: 100%;
+	height: 100%;
 	display: block;
+	object-fit: cover;
+	object-position: center;
 }
 
 .course-block-five .inner-box .image::before {
@@ -16903,6 +17025,8 @@ img {
 	margin-bottom: 8px;
 	margin-top: 16px;
 	font-weight: 700;
+	line-height: 1.25em;
+	min-height: 2.5em;
 	font-family: 'Glory', sans-serif;
 }
 
