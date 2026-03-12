@@ -320,62 +320,66 @@ $aftercare_food = get_field('aftercare_food');
 $aftercare_price = get_field('aftercare_price');
 $aftercare_points_normalized = preg_replace('/<br\s*\/?>/i', "\n", (string) $aftercare_points_raw);
 $aftercare_points = array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', wp_strip_all_tags($aftercare_points_normalized))));
-$aftercare_icons = array('flaticon-teaching', 'flaticon-graduation-cap', 'flaticon-bullhorn', 'flaticon-padlock-1');
 ?>
 
 <?php if ($aftercare_title || !empty($aftercare_points)): ?>
-<section class="feature-section-three aftercare-advantages" id="aftercare">
+<section class="mission-section aftercare-mission" id="aftercare">
     <div class="pattern-layer-one"
         style="background-image:url(<?php echo get_template_directory_uri(); ?>/assets/img/images2/icons/icon-20.png)">
     </div>
-    <div class="pattern-layer-three"
-        style="background-image:url(<?php echo get_template_directory_uri(); ?>/assets/img/images2/icons/icon-27.png)">
+    <div class="pattern-layer-two"
+        style="background-image:url(<?php echo get_template_directory_uri(); ?>/assets/img/images2/icons/icon-21.png)">
     </div>
     <div class="auto-container">
         <div class="row clearfix">
-            <div class="title-column col-lg-5 col-md-12 col-sm-12">
+            <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <?php if ($aftercare_notice): ?>
                         <div class="title"><?php echo esc_html($aftercare_notice); ?></div>
                     <?php endif; ?>
+
                     <?php if ($aftercare_title): ?>
                         <h2><?php echo esc_html($aftercare_title); ?></h2>
                     <?php endif; ?>
+
                     <?php if ($aftercare_subtitle): ?>
-                        <div class="text"><?php echo esc_html($aftercare_subtitle); ?></div>
+                        <div class="bold-text"><?php echo esc_html($aftercare_subtitle); ?></div>
                     <?php endif; ?>
 
-                    <?php if ($aftercare_food || $aftercare_price): ?>
-                        <div class="aftercare-meta-box">
-                            <?php if ($aftercare_food): ?>
-                                <div class="text aftercare-food"><?php echo nl2br(esc_html($aftercare_food)); ?></div>
-                            <?php endif; ?>
+                    <?php if ($aftercare_food): ?>
+                        <div class="text"><?php echo nl2br(esc_html($aftercare_food)); ?></div>
+                    <?php endif; ?>
 
-                            <?php if ($aftercare_price): ?>
-                                <h3><?php echo esc_html($aftercare_price); ?></h3>
-                            <?php endif; ?>
-                        </div>
+                    <?php if ($aftercare_price): ?>
+                        <div class="aftercare-price"><?php echo esc_html($aftercare_price); ?></div>
                     <?php endif; ?>
 
                     <div class="button-box">
-                        <a class="theme-btn btn-style-eleven" href="#quiz-popup" data-fancybox>
+                        <a class="theme-btn btn-style-ten" href="#quiz-popup" data-fancybox>
                             <span class="txt">Записаться на экскурсию<i class="icon"></i></span>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="blocks-column col-lg-7 col-md-12 col-sm-12">
+            <div class="image-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <div class="row clearfix">
-                        <?php foreach ($aftercare_points as $index => $point): ?>
-                            <div class="feature-block-five col-lg-6 col-md-6 col-sm-12">
-                                <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1200ms">
-                                    <div class="icon <?php echo esc_attr($aftercare_icons[$index % count($aftercare_icons)]); ?>"></div>
-                                    <h4><?php echo esc_html($point); ?></h4>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
+                    <div class="pattern-layer-three"
+                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/assets/img/images2/icons/icon-22.png)">
+                    </div>
+                    <div class="pattern-layer-four"
+                        style="background-image:url(<?php echo get_template_directory_uri(); ?>/assets/img/images2/icons/icon-23.png)">
+                    </div>
+
+                    <div class="aftercare-card wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1200ms">
+                        <h3>Что входит в продленку</h3>
+                        <?php if (!empty($aftercare_points)): ?>
+                            <ul class="aftercare-list">
+                                <?php foreach ($aftercare_points as $point): ?>
+                                    <li><?php echo esc_html($point); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

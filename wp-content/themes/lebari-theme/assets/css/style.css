@@ -15488,89 +15488,103 @@ img {
 	color: #102659;
 }
 
-/* Aftercare block aligned with Feature Section Three visual style */
-.aftercare-advantages {
-	padding: 40px 0 95px;
-	background-color: #f6f8fc;
+/* Aftercare block in mission-section style */
+.aftercare-mission {
+	padding: 85px 0 95px;
+	background-color: #f3f8fd;
 }
 
-.aftercare-advantages .title-column .inner-column {
-	padding-top: 30px;
-	padding-right: 20px;
+.aftercare-mission .content-column .inner-column {
+	padding-right: 26px;
 }
 
-.aftercare-advantages .title-column .title {
+.aftercare-mission .content-column .title {
 	position: relative;
 	color: #43b97d;
 	font-size: 20px;
 	font-weight: 500;
 	line-height: 1.4em;
-	margin-bottom: 16px;
+	margin-bottom: 14px;
 	font-family: 'Lato', sans-serif;
 }
 
-.aftercare-advantages .title-column h2 {
+.aftercare-mission .content-column h2 {
 	max-width: 520px;
+	margin-bottom: 18px;
 }
 
-.aftercare-advantages .title-column .text {
-	font-size: 19px;
-	margin-bottom: 26px;
+.aftercare-mission .content-column .bold-text {
+	margin-bottom: 16px;
 }
 
-.aftercare-advantages .aftercare-meta-box {
-	position: relative;
-	margin-bottom: 26px;
-	padding: 24px 24px 20px;
-	border-radius: 15px;
-	background: #ffffff;
-	box-shadow: 0 10px 30px rgba(12, 13, 36, 0.08);
-}
-
-.aftercare-advantages .aftercare-meta-box .aftercare-food {
-	margin-bottom: 14px;
-	font-size: 17px;
+.aftercare-mission .content-column .text {
+	font-size: 18px;
 	line-height: 1.7em;
-	color: #424256;
+	margin-bottom: 18px;
 }
 
-.aftercare-advantages .aftercare-meta-box h3 {
+.aftercare-mission .aftercare-price {
 	color: #0c0d24;
-	font-size: 32px;
-	line-height: 1.2em;
-	margin: 0;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 1.15em;
+	margin-bottom: 24px;
 	font-family: 'Glory', sans-serif;
 }
 
-.aftercare-advantages .blocks-column .inner-column {
-	padding-left: 12px;
-	padding-right: 12px;
+.aftercare-mission .image-column .inner-column {
+	padding-left: 30px;
+	padding-top: 20px;
+	position: relative;
 }
 
-.aftercare-advantages .feature-block-five .inner-box {
-	min-height: 215px;
-	text-align: left;
-	padding: 24px 20px 22px;
-	border: 1px solid #ebedf2;
-	box-shadow: 0 8px 24px rgba(12, 13, 36, 0.08);
+.aftercare-mission .aftercare-card {
+	position: relative;
+	background-color: #ffffff;
+	border-radius: 22px;
+	padding: 34px 30px 28px;
+	box-shadow: 0 18px 42px rgba(12, 13, 36, 0.12);
+	border: 1px solid #e8edf4;
+	z-index: 1;
 }
 
-.aftercare-advantages .feature-block-five .inner-box .icon {
-	margin: 0 0 14px;
-	width: 78px;
-	height: 78px;
-	line-height: 80px;
-	font-size: 38px;
-}
-
-.aftercare-advantages .feature-block-five .inner-box h4 {
-	font-size: 24px;
-	line-height: 1.35em;
-	font-weight: 600;
-	margin: 0;
-	text-transform: none;
-	letter-spacing: 0;
+.aftercare-mission .aftercare-card h3 {
+	font-size: 34px;
+	line-height: 1.15em;
+	margin-bottom: 20px;
+	color: #0c0d24;
 	font-family: 'Glory', sans-serif;
+	font-weight: 700;
+}
+
+.aftercare-mission .aftercare-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	column-count: 1;
+	column-gap: 0;
+}
+
+.aftercare-mission .aftercare-list li {
+	position: relative;
+	padding-left: 28px;
+	margin-bottom: 13px;
+	font-size: 17px;
+	line-height: 1.5em;
+	color: #3d3f53;
+	break-inside: avoid;
+}
+
+.aftercare-mission .aftercare-list li:before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 8px;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #43b97d 0%, #65c794 100%);
+	box-shadow: 0 0 0 5px rgba(67, 185, 125, 0.16);
 }
 
 /* Footer spacing and alignment refinements */
@@ -15597,22 +15611,29 @@ img {
 }
 
 @media only screen and (max-width: 991px) {
-	.aftercare-advantages {
-		padding: 35px 0 70px;
+	.aftercare-mission {
+		padding: 60px 0 65px;
 	}
 
-	.aftercare-advantages .title-column .inner-column {
-		padding-top: 0;
+	.aftercare-mission .content-column .inner-column {
 		padding-right: 0;
 	}
 
-	.aftercare-advantages .blocks-column .inner-column {
+	.aftercare-mission .image-column .inner-column {
 		padding-left: 0;
-		padding-right: 0;
+		padding-top: 8px;
 	}
 
-	.aftercare-advantages .feature-block-five .inner-box {
-		min-height: 0;
+	.aftercare-mission .aftercare-card {
+		padding: 28px 22px 22px;
+	}
+
+	.aftercare-mission .aftercare-card h3 {
+		font-size: 30px;
+	}
+
+	.aftercare-mission .aftercare-price {
+		font-size: 30px;
 	}
 }
 
