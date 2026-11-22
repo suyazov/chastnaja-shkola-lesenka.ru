@@ -6,13 +6,6 @@
 <?php wp_head(); ?>
 
 
-<!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/responsive.css" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css2?family=Glory:wght@100;300;400;500;600;700;800&family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/images/favicon.png" type="image/x-icon">
 <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/images/favicon.png" type="image/x-icon">
 
