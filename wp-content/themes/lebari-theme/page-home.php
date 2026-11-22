@@ -476,7 +476,6 @@ $aftercare_points = array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', wp
                         <!-- Feature Block Five -->
                         <div class="feature-block-five col-lg-6 col-md-6 col-sm-12">
                             <div class="inner-box">
-                                <a href="blog-detail.html" class="overlay-box"></a>
                                 <div class="icon flaticon-teaching"></div>
                                 <h4><?php echo get_field('feature_card1') ?></h4>
                             </div>
@@ -485,7 +484,6 @@ $aftercare_points = array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', wp
                         <!-- Feature Block Five -->
                         <div class="feature-block-five col-lg-6 col-md-6 col-sm-12">
                             <div class="inner-box">
-                                <a href="blog-detail.html" class="overlay-box"></a>
                                 <div class="icon flaticon-graduation-cap"></div>
                                 <h4><?php echo get_field('feature_card2') ?></h4>
                             </div>
@@ -494,7 +492,6 @@ $aftercare_points = array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', wp
                         <!-- Feature Block Five -->
                         <div class="feature-block-five col-lg-6 col-md-6 col-sm-12">
                             <div class="inner-box">
-                                <a href="blog-detail.html" class="overlay-box"></a>
                                 <div class="icon flaticon-bullhorn"></div>
                                 <h4><?php echo get_field('feature_card3') ?></h4>
                             </div>
@@ -503,7 +500,6 @@ $aftercare_points = array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', wp
                         <!-- Feature Block Five -->
                         <div class="feature-block-five col-lg-6 col-md-6 col-sm-12">
                             <div class="inner-box">
-                                <a href="blog-detail.html" class="overlay-box"></a>
                                 <div class="icon flaticon-padlock-1"></div>
                                 <h4><?php echo get_field('feature_card4') ?></h4>
                             </div>
